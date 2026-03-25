@@ -5,8 +5,6 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY trabalho.py .
+COPY trabalho.ipynb .
 
-RUN mkdir -p /app/output
-
-CMD ["python", "-u", "trabalho.py"]
+CMD ["jupyter", "nbconvert", "--to", "notebook", "--execute", "--inplace", "--ExecutePreprocessor.timeout=600", "trabalho.ipynb"]

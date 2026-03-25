@@ -2,4 +2,4 @@ services:
   trabalho:
     build: .
     volumes:
-      - ./output:/app/output
+      - ./trabalho.ipynb:/app/trabalho.ipynb
